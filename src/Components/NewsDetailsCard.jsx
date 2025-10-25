@@ -1,0 +1,15 @@
+import React from 'react';
+import { Link } from 'react-router';
+
+const NewsDetailsCard = ({ news }) => {
+    return (
+        <div className='space-y-5'>
+            <img className='w-full h-[350px] object-cover' src={news.image_url} alt="" />
+            <h2 className='font-bold text-2xl'>{news.title}</h2>
+            <p className='text-sm text-accent'>{news.details}</p>
+            <Link className='text-white btn btn-secondary' to={`/category/${news.category_id}`}>All news in this category</Link>
+        </div>
+    );
+};
+
+export default NewsDetailsCard;
